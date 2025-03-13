@@ -52,6 +52,9 @@ jobs:
 
       - name: Push Model to DAGsHub
         run: |
+          dvc remote modify origin --local auth basic 
+          dvc remote modify origin --local user ${{ secrets.DAGSHUB_USER }} 
+          dvc remote modify origin --local password ${{ secrets.DAGSHUB_TOKEN }} 
           git rm -r --cached IRIS-model.pkl
           git commit -m "stop tracking IRIS-model.pkl" 
           dvc add IRIS-model.pkl
