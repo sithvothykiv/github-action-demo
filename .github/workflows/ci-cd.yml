@@ -52,7 +52,7 @@ jobs:
 
       - name: Push Model to DAGsHub
         run: |
-          git rm -r --cached 'IRIS-model.pkl
+          git rm -r --cached IRIS-model.pkl
           git commit -m "stop tracking IRIS-model.pkl" 
           dvc add IRIS-model.pkl
           git add IRIS-model.pkl.dvc
