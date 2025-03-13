@@ -39,7 +39,7 @@ jobs:
 
       - name: Configure DVC Remote
         run: |
-          dvc init
+          dvc init -f
           dvc remote add origin https://dagshub.com/${{ secrets.DAGSHUB_USER }}/${{ secrets.REPO_NAME }}.dvc
           dvc remote default origin
 # dvc remote add origin https://dagshub.com/k.sithvothy12/github-action-demo.dvc
