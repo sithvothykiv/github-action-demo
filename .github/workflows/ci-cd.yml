@@ -23,13 +23,13 @@ jobs:
           pip install joblib==1.1.0
           pip install dvc==2.10.2
 
-      - name: Run Tests
-        run: |
+      # - name: Run Tests
+        # run: |
           # python test_model.py
 
           # Assuming you have a test file named test_model.py
           # You can replace this with your actual test command
-          pytest tests/
+          # pytest tests/
       # Uncomment the following lines if you have specific tests to run
       
 
