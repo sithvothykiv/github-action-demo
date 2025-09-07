@@ -5,10 +5,10 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
+  set-up-env:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code + DVC
+      - name: Checkout Code
         uses: actions/checkout@v2
 
       - name: Set Up Python
@@ -23,15 +23,24 @@ jobs:
           pip install joblib==1.1.0
           pip install dvc==2.10.2
 
+      - name: Run Tests
+        run: |
+          # python test_model.py
+
+          # Assuming you have a test file named test_model.py
+          # You can replace this with your actual test command
+          pytest tests/
+      # Uncomment the following lines if you have specific tests to run
+      
 
       # - name: Run Model Tests
       #   run: pytest tests/
 
   deploy:
-    needs: test
+    needs: set-up-env
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code + DVC
+      - name: Checkout Code
         uses: actions/checkout@v2
 
       - name: Set Up DVC
